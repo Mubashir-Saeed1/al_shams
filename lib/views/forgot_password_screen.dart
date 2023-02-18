@@ -43,7 +43,7 @@ class ForgotPasswordScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10.h),
-            Obx(() => AlTextField(
+            AlTextField(
                   validator: () {},
                   hintText: 'Enter your email',
                   labelText: 'Email',
@@ -55,7 +55,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   ),
                   controller: _authController.forgotPasswordController,
                   keyboardType: TextInputType.emailAddress,
-                )),
+                ),
             SizedBox(height: 14.h),
             AlButton(text: 'Send Link', onPressed: () {}),
           ],
