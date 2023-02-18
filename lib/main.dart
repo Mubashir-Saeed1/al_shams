@@ -1,6 +1,7 @@
+// ignore_for_file: unused_field
 import 'dart:async';
-
-import 'package:al_shams/views/login_screen.dart';
+import 'package:al_shams/controllers/auth_controller.dart';
+import 'package:al_shams/views/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -10,8 +11,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+  final _authController = Get.put(AuthController());
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -36,8 +36,8 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
-    Timer.periodic(Duration(seconds: 3), (timer) {
-      Get.offAll(()=>LoginScreen());
+    Future.delayed(Duration(seconds: 3), () {
+      Get.offAll(() => SignUpScreen());
     });
   }
 
