@@ -3,7 +3,9 @@ import 'package:al_shams/utils/custom_widgets/al_text_button.dart';
 import 'package:al_shams/utils/custom_widgets/al_textfield.dart';
 import 'package:al_shams/utils/custom_widgets/al_button.dart';
 import 'package:al_shams/utils/custom_widgets/al_colors.dart';
+import 'package:al_shams/utils/title_text_style.dart';
 import 'package:al_shams/views/forgot_password_screen.dart';
+import 'package:al_shams/views/navigation_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,15 +27,7 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(
-              padding: EdgeInsets.only(left: 10.w, top: Get.height * 0.1),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Text('Sign In',
-                    style: TextStyle(
-                        fontSize: 24.sp, fontWeight: FontWeight.bold)),
-              ),
-            ),
+            alTitleText('Sign In'),
             SizedBox(
               height: Get.height * 0.08,
             ),
@@ -72,7 +66,11 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10.h),
-            AlButton(text: 'Sign In', onPressed: () {}),
+            AlButton(
+                text: 'Sign In',
+                onPressed: () {
+                  Get.to(() => NavigationScreen());
+                }),
             SizedBox(height: 10.h),
             GestureDetector(
               onTap: () {},
