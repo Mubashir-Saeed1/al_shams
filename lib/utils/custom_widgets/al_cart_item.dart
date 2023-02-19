@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-
 class AlCartItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -34,7 +33,7 @@ class AlCartItem extends StatelessWidget {
                       fontSize: 14.sp,
                       fontWeight: FontWeight.bold,
                       color: AlColors.textColor)),
-                      SizedBox(height: 4.h),
+              SizedBox(height: 4.h),
               Row(
                 children: [
                   Text(
@@ -58,10 +57,14 @@ class AlCartItem extends StatelessWidget {
               SizedBox(height: 10.h),
               Row(children: [
                 FloatingActionButton.small(
-                  heroTag: 'Decrease',
+                  heroTag: null,
                   tooltip: 'Decrease Item',
                   onPressed: () {},
-                  child: Text('-', style: TextStyle(color: AlColors.textColor, fontSize: 30.sp, fontWeight: FontWeight.w300)),
+                  child: Text('-',
+                      style: TextStyle(
+                          color: AlColors.textColor,
+                          fontSize: 30.sp,
+                          fontWeight: FontWeight.w300)),
                   elevation: 2,
                   backgroundColor: AlColors.textFieldColor,
                 ),
@@ -71,12 +74,14 @@ class AlCartItem extends StatelessWidget {
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w400)),
                 FloatingActionButton.small(
-                  heroTag: 'Increase',
+                  heroTag: null,
                   tooltip: 'Increase Item',
                   onPressed: () {},
                   child: Text('+',
                       style: TextStyle(
-                          color: AlColors.textColor, fontSize: 20.sp, fontWeight: FontWeight.w300)),
+                          color: AlColors.textColor,
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w300)),
                   elevation: 2,
                   backgroundColor: AlColors.textFieldColor,
                 ),
@@ -93,7 +98,7 @@ class AlCartItem extends StatelessWidget {
                     CupertinoIcons.ellipsis_vertical,
                     color: AlColors.subtitleColor,
                   )),
-                  Spacer(),
+              Spacer(),
               Text(
                 'Rs. 450',
                 style: TextStyle(

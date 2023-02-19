@@ -2,6 +2,7 @@ import 'package:al_shams/utils/custom_widgets/al_button.dart';
 import 'package:al_shams/utils/custom_widgets/al_cart_item.dart';
 import 'package:al_shams/utils/custom_widgets/al_colors.dart';
 import 'package:al_shams/utils/title_text_style.dart';
+import 'package:al_shams/views/checkout_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,7 +13,9 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        alTitleText('My Cart'),
+        Padding(
+            padding: EdgeInsets.only(left: 10.w, top: Get.height * 0.1),
+            child: alTitleText('My Cart')),
         SizedBox(height: 10.h),
         Container(
           height: Get.height * 0.64,
@@ -55,7 +58,11 @@ class CartScreen extends StatelessWidget {
           ),
         ),
         SizedBox(height: 4.h),
-        AlButton(text: 'Checkout', onPressed: () {})
+        AlButton(
+            text: 'Checkout',
+            onPressed: () {
+              Get.to(() => CheckoutScreen());
+            })
       ],
     );
   }

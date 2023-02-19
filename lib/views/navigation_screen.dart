@@ -6,6 +6,7 @@ import 'package:al_shams/views/home_screen.dart';
 import 'package:al_shams/views/profile_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class NavigationScreen extends StatelessWidget {
@@ -22,7 +23,7 @@ class NavigationScreen extends StatelessWidget {
       backgroundColor: AlColors.scaffoldBackgroundColor,
       body: Obx(() => pages[_generalController.homeIndex.value]),
       bottomNavigationBar: Obx(
-        ()=> BottomNavigationBar(
+        () => BottomNavigationBar(
           unselectedItemColor: AlColors.textColor,
           selectedItemColor: AlColors.buttonColor,
           items: [
@@ -31,7 +32,8 @@ class NavigationScreen extends StatelessWidget {
             BottomNavigationBarItem(
                 icon: Icon(CupertinoIcons.cart), label: 'Cart'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.favorite_border_outlined), label: 'Favourites'),
+                icon: Icon(Icons.favorite_border_outlined),
+                label: 'Favourites'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.person_outline_rounded), label: 'Profile')
           ],
@@ -42,6 +44,19 @@ class NavigationScreen extends StatelessWidget {
             _generalController.homeIndex.value = index;
             print("Selected Index: $index");
           },
+        ),
+      ),
+      floatingActionButton: Obx(
+        ()=> Visibility(
+          visible: _generalController.homeIndex.value != 1,
+          child: FloatingActionButton.extended(
+            backgroundColor: AlColors.buttonColor,
+            icon: Image.asset('assets/images/whatsapp_logo.png', height: 16.h, width: 16.h, fit: BoxFit.cover,),
+              onPressed: () {},
+              label: Text(
+                'Contact Us',
+                style: TextStyle(color: AlColors.textFieldColor, fontSize: 14.sp),
+              )),
         ),
       ),
     );

@@ -13,7 +13,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        alTitleText('Al Shams Products'),
+        Padding(
+            padding: EdgeInsets.only(left: 10.w, top: Get.height * 0.1),
+            child: alTitleText('Al Shams Products')),
         SizedBox(
           height: 10.h,
         ),

@@ -84,11 +84,11 @@ class AlProduct extends StatelessWidget {
             child: Align(
               alignment: Alignment.topRight,
               child: IconButton(
-                  onPressed: () {
-                  },
-                  icon: Icon(Icons.close,
-                        color: AlColors.buttonColor,
-                      )),
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.close,
+                    color: AlColors.buttonColor,
+                  )),
             ),
           )
         ],

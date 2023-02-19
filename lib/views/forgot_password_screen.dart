@@ -23,7 +23,10 @@ class ForgotPasswordScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            alTitleText('Forgot Password'),
+            Padding(
+              padding: EdgeInsets.only(left: 10.w, top: Get.height * 0.1),
+              child: alTitleText('Forgot Password'),
+            ),
             SizedBox(
               height: Get.height * 0.08,
             ),
@@ -37,18 +40,18 @@ class ForgotPasswordScreen extends StatelessWidget {
             ),
             SizedBox(height: 10.h),
             AlTextField(
-                  validator: () {},
-                  hintText: 'Enter your email',
-                  labelText: 'Email',
-                  suffixIcon: IconButton(
-                    onPressed: () {
-                      _authController.forgotPasswordController.clear();
-                    },
-                    icon: Icon(Icons.close),
-                  ),
-                  controller: _authController.forgotPasswordController,
-                  keyboardType: TextInputType.emailAddress,
-                ),
+              validator: () {},
+              hintText: 'Enter your email',
+              labelText: 'Email',
+              suffixIcon: IconButton(
+                onPressed: () {
+                  _authController.forgotPasswordController.clear();
+                },
+                icon: Icon(Icons.close),
+              ),
+              controller: _authController.forgotPasswordController,
+              keyboardType: TextInputType.emailAddress,
+            ),
             SizedBox(height: 14.h),
             AlButton(text: 'Send Link', onPressed: () {}),
           ],

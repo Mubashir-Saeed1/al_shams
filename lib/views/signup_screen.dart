@@ -27,7 +27,9 @@ class SignUpScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            alTitleText('Sign Up'),
+            Padding(
+                padding: EdgeInsets.only(left: 10.w, top: Get.height * 0.1),
+                child: alTitleText('Sign Up')),
             SizedBox(
               height: Get.height * 0.08,
             ),
@@ -71,9 +73,11 @@ class SignUpScreen extends StatelessWidget {
                   'Already have an account? ',
                   style: TextStyle(fontSize: 12.sp, color: AlColors.textColor),
                 ),
-                AlTextButton(onPressed: () {
-                  Get.to(() => LoginScreen());
-                }, text: 'Login instead')
+                AlTextButton(
+                    onPressed: () {
+                      Get.to(() => LoginScreen());
+                    },
+                    text: 'Login instead')
               ],
             ),
             SizedBox(height: 10.h),

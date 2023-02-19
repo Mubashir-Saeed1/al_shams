@@ -27,7 +27,9 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            alTitleText('Sign In'),
+            Padding(
+                padding: EdgeInsets.only(left: 10.w, top: Get.height * 0.1),
+                child: alTitleText('Sign In')),
             SizedBox(
               height: Get.height * 0.08,
             ),
